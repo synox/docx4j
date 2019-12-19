@@ -122,12 +122,12 @@
                             javax.xml.transform.stream,
                             javax.xml.validation,
                             javax.xml.xpath,
-                            javax.xml.bind,
-                            javax.xml.bind.util,
-                            javax.xml.bind.annotation,
-                            javax.xml.bind.annotation.adapters,
-                            javax.xml.bind.attachment,
-                            javax.xml.bind.helpers,
+							javax.xml.bind;version="[2.2,3)",
+							javax.xml.bind.util;version="[2.2,3)",
+							javax.xml.bind.annotation;version="[2.2,3)",
+							javax.xml.bind.annotation.adapters;version="[2.2,3)",
+							javax.xml.bind.attachment;version="[2.2,3)",
+							javax.xml.bind.helpers;version="[2.2,3)",
                             org.w3c.dom,
                             org.w3c.dom.bootstrap,
                             org.w3c.dom.css,
@@ -150,7 +150,11 @@
                             net.arnx.wmf2svg.gdi.wmf,
                             net.arnx.wmf2svg.io,
                             net.arnx.wmf2svg.util,
-                            com.thedeanda.lorem
+                            com.thedeanda.lorem,
+							com.lowagie.text.*,
+							javax.imageio.*,
+							org.docx4j.jaxb.ri,
+							org.apache.commons.compress.*
                         </Import-Package>
                         <Export-Package>
                             com.topologi.diffx.xml,
@@ -170,6 +174,9 @@
 						    org.opendope.*,
                             org.jvnet.jaxb2_commons.ppp
                         </Export-Package>
+						<Embed-Dependency>
+							docx4j-ImportXHTML
+						</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>				
@@ -231,8 +238,12 @@
 			<artifactId>jaxb-svg11</artifactId><!-- previously part of docx4j source -->
 			<version>1.0.2</version>
 		</dependency>
-				
-		
+
+		<dependency>
+			<groupId>org.docx4j</groupId>
+			<artifactId>docx4j-ImportXHTML</artifactId>
+			<version>8.0.0</version>
+		</dependency>
 		<!--  events -->
 		<dependency>
 		    <groupId>net.engio</groupId>
